@@ -7,7 +7,9 @@
  */
 
 //phpinfo();
-error_reporting(E_ALL);
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(-1);
 
 function __autoload($class_name) {
     require_once $class_name . '.php';
@@ -16,7 +18,12 @@ function __autoload($class_name) {
 $product1 = new ShopProduct( "Собачье сердце", "Булгаков", "Михаил", 6.99 );
 $product2 = new ShopProduct( "Горе от ума", "Грибоедов", "Александр", 5.99 );
 
-print "Автор: {$product1->getProducer()}\n";
+class Wrong {}
 
-var_dump($product1);
-var_dump($product2);
+try {
+    $writer = new ShopProductWriter();
+    $writer->write($product1);
+    $writer->write();
+} catch (Exception $e) {
+    print $e;
+}

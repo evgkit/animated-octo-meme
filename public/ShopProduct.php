@@ -6,6 +6,8 @@
  * Time: 17:32
  */
 
+
+
 class ShopProduct
 {
     public $title = "Стандартный продукт";
