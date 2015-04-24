@@ -7,8 +7,8 @@
  */
 
 //phpinfo();
-ini_set('display_startup_errors',1);
-ini_set('display_errors',1);
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
 error_reporting(-1);
 
 function __autoload($class_name) {
@@ -17,8 +17,17 @@ function __autoload($class_name) {
 
 $product1 = new ShopProduct( "Собачье сердце", "Булгаков", "Михаил", 6.99 );
 $product2 = new ShopProduct( "Горе от ума", "Грибоедов", "Александр", 5.99 );
+$cd = new ShopProduct( "Scum", "Artist", "Lukas", 5.99, null, 59.59 );
+$book = new ShopProduct( "Book", "Duma", "Alexander", 1.99, 350, null );
 
-class Wrong {}
+//print "Исполнитель: {$product3->getProducer()}\n";
+
+$writer = new ShopProductWriter();
+$writer->write($cd);
+?> <br/> <?
+$writer->write($book);
+
+/*class Wrong {}
 
 try {
     $writer = new ShopProductWriter();
@@ -26,4 +35,4 @@ try {
     $writer->write();
 } catch (Exception $e) {
     print $e;
-}
+}*/
