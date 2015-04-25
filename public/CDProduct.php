@@ -8,19 +8,19 @@
 
 class CDProduct extends ShopProduct
 {
-    public $playLength;
+    private $playLength = 0;
 
-    function __construct($title, $producerMainName, $producerFirstName, $price, $playLength) {
-        parent::__construct($title, $producerMainName, $producerFirstName, $price);
+    public function __construct($title, $producerFirstName, $producerMainName, $price, $playLength) {
+        parent::__construct($title, $producerFirstName, $producerMainName, $price);
         $this->playLength = $playLength;
     }
 
-    function getPlayLength() {
+    public function getPlayLength() {
         return $this->playLength;
     }
 
-    function getSummaryLine() {
-        $base = parent::getSummaryLine() . ": Время звучания - " . $this->getPlayLength();
+    public function getSummaryLine() {
+        $base = parent::getSummaryLine() . ": Время звучания - " . $this->playLength . PHP_EOL;
         return $base;
     }
 }
