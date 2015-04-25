@@ -17,8 +17,8 @@ function __autoload($class_name) {
 
 $product1 = new ShopProduct( "Собачье сердце", "Булгаков", "Михаил", 6.99 );
 $product2 = new ShopProduct( "Горе от ума", "Грибоедов", "Александр", 5.99 );
-$cd = new ShopProduct( "Scum", "Artist", "Lukas", 5.99, null, 59.59 );
-$book = new ShopProduct( "Book", "Duma", "Alexander", 1.99, 350, null );
+$cd = new CDProduct( "Scum", "Artist", "Lukas", 5.99, 59.59 );
+$book = new BookProduct( "Book", "Duma", "Alexander", 1.99, 350);
 
 //print "Исполнитель: {$product3->getProducer()}\n";
 

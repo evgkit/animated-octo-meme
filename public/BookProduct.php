@@ -6,14 +6,21 @@
  * Time: 23:43
  */
 
-class BookProduct extends ShopProduct {
+class BookProduct extends ShopProduct
+{
+    public $numPages;
+
+    function __construct($title, $producerMainName, $producerFirstName, $price, $numPages) {
+        parent::__construct($title, $producerMainName, $producerFirstName, $price);
+        $this->numPages = $numPages;
+    }
+
     function getNumberOfPages() {
         return $this->numPages;
     }
 
     function getSummaryLine() {
-        $base = "{$this->title} ( {$this->producerMainName}, {$this->producerFirstName} )"
-            . ": ". $this->getNumberOfPages() . " стр.";
+        $base = parent::getSummaryLine() . ": " . $this->getNumberOfPages() . " стр.";
         return $base;
     }
 }

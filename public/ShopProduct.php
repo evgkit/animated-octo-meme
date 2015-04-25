@@ -8,21 +8,16 @@
 
 class ShopProduct
 {
-    public $numPages;
-    public $playLength;
     public $title;
     public $producerMainName;
     public $producerFirstName;
     public $price;
 
-    function __construct( $title, $producerMainName, $producerFirstName, $price,
-                            $numPages = 0, $playLength = 0) {
+    function __construct( $title, $producerMainName, $producerFirstName, $price) {
         $this->title = $title;
         $this->producerMainName = $producerMainName;
         $this->producerFirstName = $producerFirstName;
         $this->price = $price;
-        $this->numPages = $numPages;
-        $this->playLength = $playLength;
     }
 
     function getProducer() {

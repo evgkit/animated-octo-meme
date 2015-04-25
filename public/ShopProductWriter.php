@@ -14,10 +14,8 @@ class ShopProductWriter
      */
     public function write( ShopProduct $shopProduct = null ) {
         if (!is_null($shopProduct)) {
-            $str = "{$shopProduct->title}: " . $shopProduct->getProducer() . " ({$shopProduct->price})\n";
+            $str = $shopProduct->getSummaryLine();
             print $str;
-        } else {
-            var_dump($shopProduct);
         }
     }
 }
