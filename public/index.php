@@ -20,19 +20,7 @@ $product2 = new ShopProduct( "Горе от ума", "Грибоедов", "Ал
 $cd = new CDProduct( "Scum", "Artist", "Lukas", 5.99, 59.59 );
 $book = new BookProduct( "Book", "Duma", "Alexander", 1.99, 350);
 
-//print "Исполнитель: {$product3->getProducer()}\n";
-
 $writer = new ShopProductWriter();
-$writer->write($cd);
-?> <br/> <?
-$writer->write($book);
-
-/*class Wrong {}
-
-try {
-    $writer = new ShopProductWriter();
-    $writer->write($product1);
-    $writer->write();
-} catch (Exception $e) {
-    print $e;
-}*/
+$writer->addProduct($cd);
+$writer->addProduct($book);
+$writer->write();

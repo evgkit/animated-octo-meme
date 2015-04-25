@@ -9,13 +9,17 @@
 
 class ShopProductWriter
 {
-    /**
-     * @param $shopProduct
-     */
-    public function write( ShopProduct $shopProduct = null ) {
-        if (!is_null($shopProduct)) {
-            $str = $shopProduct->getSummaryLine();
-            print $str;
+    private $products = [];
+
+    public function addProduct( ShopProduct $shopProduct ) {
+        $this->products[] = $shopProduct;
+    }
+
+    public function write() {
+        $str = "";
+        foreach ($this->products as $product) {
+            $str .= $product->getSummaryLine();
         }
+        print $str;
     }
 }
