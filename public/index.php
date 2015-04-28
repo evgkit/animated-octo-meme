@@ -21,6 +21,13 @@ $cd = new CDProduct( "Scum", "Artist", "Lukas", 5.99, 59.59 );
 $book = new BookProduct( "Book", "Duma", "Alexander", 1.99, 350);
 
 $writer = new ShopProductWriter();
+$writer->addProduct($product1);
+$writer->addProduct($product2);
 $writer->addProduct($cd);
 $writer->addProduct($book);
 $writer->write();
+
+StaticExample::sayHello();
+StaticExample::sayHello();
+StaticExample::sayHello();
+//ShopProductWriter::write();
