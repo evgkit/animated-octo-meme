@@ -6,7 +6,7 @@
  * Time: 17:32
  */
 
-class ShopProduct
+class ShopProduct implements Chargeable
 {
     const AVAILABLE = 0;
     const OUT_OF_STOCK = 1;
