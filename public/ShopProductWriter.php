@@ -6,20 +6,13 @@
  * Time: 22:53
  */
 
-
-class ShopProductWriter
+abstract class ShopProductWriter
 {
-    private $products = [];
+    protected $products = [];
 
     public function addProduct( ShopProduct $shopProduct ) {
         $this->products[] = $shopProduct;
     }
 
-    public function write() {
-        $str = "";
-        foreach ($this->products as $product) {
-            $str .= $product->getSummaryLine();
-        }
-        print $str;
-    }
+    abstract public function write();
 }

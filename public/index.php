@@ -20,14 +20,14 @@ $product2 = new ShopProduct( "Горе от ума", "Грибоедов", "Ал
 $cd = new CDProduct( "Scum", "Artist", "Lukas", 5.99, 59.59 );
 $book = new BookProduct( "Book", "Duma", "Alexander", 1.99, 350);
 
-/*$writer = new ShopProductWriter();
+$writer = new TextProductWriter();
 $writer->addProduct($product1);
 $writer->addProduct($product2);
 $writer->addProduct($cd);
 $writer->addProduct($book);
-$writer->write();*/
+$writer->write();
 
-mysql_connect("localhost", "root", "1");
+/*mysql_connect("localhost", "root", "1");
 mysql_select_db("test");
 
 $sql = "INSERT INTO products (id, type, firstname, mainname, title, price, numpages, playlength, discount)
@@ -39,13 +39,15 @@ $options = array(
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
 );
 $pdo = new PDO($dsn, 'root', '1', $options);
-$product3 = ShopProduct::getInstance(1, $pdo);
+$product3 = ShopProduct::getInstance(1, $pdo);*/
 
-$anotherWriter = new ShopProductWriter();
+/*$anotherWriter = new ShopProductWriter();
 $anotherWriter->addProduct($product3);
-$anotherWriter->write();
+$anotherWriter->write();*/
 
 //StaticExample::sayHello();
 //StaticExample::sayHello();
 //StaticExample::sayHello();
 //ShopProductWriter::write();
+
+//print(ShopProduct::OUT_OF_STOCK);

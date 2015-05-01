@@ -8,6 +8,9 @@
 
 class ShopProduct
 {
+    const AVAILABLE = 0;
+    const OUT_OF_STOCK = 1;
+
     private $title;
     private $producerFirstName;
     private $producerMainName;
